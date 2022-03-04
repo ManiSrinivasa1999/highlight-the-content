@@ -1,18 +1,20 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <v-container fluid class="mt-4">
+    <v-row class="pt-4">
+      <v-col cols="12" md="3" v-for="n in 10" :key="n">
+        <v-container class="py-0">
+          <BlogPost />
+        </v-container>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import BlogPost from "../components/BlogPost.vue";
 
 export default {
   name: "Home",
-  components: {
-    HelloWorld,
-  },
+  components: { BlogPost },
 };
 </script>
